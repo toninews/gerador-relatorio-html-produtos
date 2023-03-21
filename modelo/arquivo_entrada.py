@@ -10,10 +10,9 @@ class ArquivoEntrada:
 
     @staticmethod
     def ler_arquivo_entrada():
-        arquivo_entrada = open('arquivo-entrada-produtos.csv', 'r')
-        linhas_do_arquivo = arquivo_entrada.readlines()
-        arquivo_entrada.close()
-        return linhas_do_arquivo
+        with open('arquivo-entrada-produtos.csv', 'r') as arquivo_entrada:
+            linhas_do_arquivo = arquivo_entrada.readlines()
+            return linhas_do_arquivo
 
     def preencher_objeto_arquivo_entrada(self):
         linhas_do_arquivo = self.ler_arquivo_entrada()

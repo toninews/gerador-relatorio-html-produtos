@@ -53,6 +53,5 @@ def calcular_media_preco_por_marca(produtos):
     return dicionario_precos_agrupado_por_marca
 
 def escrever_relatorio_saida(template_renderizado):
-    arquivo_saida = open('templates/relatorio_gerado.html', 'w')
-    arquivo_saida.write(template_renderizado)
-    arquivo_saida.close()
+    with open('templates/relatorio_gerado.html', 'w') as arquivo_saida:
+        arquivo_saida.write(template_renderizado)
